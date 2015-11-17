@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Streamline - Responsive One Page Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="WebDesignCrowd">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Montserrat: http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Montserrat -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    </head>
+    
+<body data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+	  <div class="container">	   
+      <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></a> 
+	    <a class="brand" href="http://webdesigncrowd.com"><img src="assets/img/logo.png"></a>
+     	<div class="nav-collapse">
+        <ul class="nav">
+          <li><a href="#top" class="active">Top</a></li>
+          <li><a href="#html">HTML Structure</a></li>
+          <li><a href="#style">CSS Stylesheets</a></li>
+          <li><a href="#javascript">JavaScript</a></li>
+          <li><a href="#credits">Credits</a></li>
+          <li><a href="mailto:webdesigncrowd@gmail.com" >Contact us</a></li>
+        </ul>
+  	  </div>
+	  </div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container">
+    
+	<div class="masthead">
+	    <h1>Streamline - Responsive One Page Portfolio</h1>
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Made by <a href="http://webdesigncrowd.com">WebDesignCrowd</a>. Feel free to checkout my other products on <a href="https://creativemarket.com/webdesigncrowd/">Creative Market</a>.<br /><br /> Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email me at <a href="mailto:webdesigncrowd@gmail.com">WebDesignCrowd@gmail.com</a>, Thanks so much!</p>
+  </div> <!-- intro -->
+      
+<section id="html">
+	<div class="page-header">
+	  <h1>HTML Structure <small>General layout and content structure</small></h1>
+	</div>
+    <p>Streamline is a Responsive one page portfolio which is mobile and retina display ready. There are 6 main sections I want to summarize here. There is the navbar, the team portraits, the services, the gallery items, the pricing and the testimonials.</p>
+
+    <hr />
+
+    <div class="row">
+      <div class="span3">
+        <h3>Navigational Bar</h3>
+        <p>The navigation is a fixed header that appears after scrolling past the welcome section. It will shrink to a dropdown menu on top on smaller devices. <br /><br />To change links in the menu, change the <code>li</code> tags in ul tag with the nav class.</p>
+      </div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+<xmp class="prettyprint"><ul class="nav navbar-nav">
+  <li><a href="#about"><span class="glyphicon glyphicon-user"></span>Team</a></li>
+  <li><a href="#services"><i class="icon-gear"></i>Services</a></li>
+  <li><a href="#work"><span class="glyphicon glyphicon-briefcase"></span>Work</a></li>
+  <li><a href="#pricing"><i class="icon-dollar"></i></span>Pricing</a></li>
+  <li><a href="#clients"><i class="icon-comments"></i></span>Clients</a></li>
+</ul></xmp>
+</pre>
+      </div>
+        </div>
+
+    <hr />
+
+<div class="row">
+    <div class="span3">
+  <h3>Team Portraits</h3>
+  <p>The team portraits consists of 3 team member profiles. This is a cutout of one of them.</p>
+  <p>The name is in the <code>h2</code> tag and the member description is in the <code>p</code> tag</p>
+  <p>To change the social media links, add the links to the href fields of the <code>a</code> tags</p>
+</div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+<xmp class="prettyprint"><div class="col-md-4 col-sm-4 col-xs-12">
+  <h2>Michael Chang</h2>
+  <h3 class="italic">Developer</h3>
+  <div class="portrait">
+    <img src="img/portrait2.jpg" alt="Team Portrait">              
+  </div>
+  <p>Hi, I'm Michael Chang. I am a developer who specializes on CSS, HTML and Javascript. I'm excited to work more and learn more about design.</p>
+  <div class="social-media">
+    <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
+    <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
+    <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
+    <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
+    <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
+  </div>
+</div></xmp>
+</pre>
+      </div>
+        </div>
+<hr />
+<div class="row">
+    <div class="span3">
+  <h3>Services</h3>
+  <p>The services section consists of 4 circles that represent different services one could offer. They also have a tooltip that appears on hover.</p>
+  <p>You can change the title of the circle in the<code>span</code> tag, and also change the tooltip text in the title field of the icon.</p>
+</div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+<xmp class="prettyprint"><div class="col-md-3 col-sm-3 col-xs-6">
+  <div class="service-icon">
+    <i class="icon-sitemap" data-toggle="tooltip" title="Professional application planning, including mockups, wireframes, and designs."></i>
+    <span>PLANNING</span>                
+  </div>
+</div></xmp>
+</pre>
+      </div>
+        </div>
+        
+        <hr />
+        <div class="row">
+            <div class="span3">
+          <h3>Portfolio Items</h3>
+          <p>The portfolio uses MixItUp to sort and filter categories of items. To learn how to use that check the javascript section.</p>
+          <p>To change the portfolio image change the <code>img</code> tag. You can also change the link in the <code>a</code> tag </p>
+        </div>
+
+        <div class="span9">
+        <pre class="prettyprint linenums">
+<xmp class="prettyprint"><li class="col-md-4 col-sm-4 col-xs-12 mix category_1" data-cat="1">
+  <a href="#" class="mix-cover">
+    <img src="img/sintel-bedroom.png">
+    <span class="cover"><h2>Sintel Bedroom</h2></span>
+  </a>
+</li></xmp>
+        </pre>
+              </div>
+                </div>
+<hr />
+<div class="row">
+    <div class="span3">
+  <h3>Pricing</h3>
+  <p>The pricing section contains 3 pricing options. It uses a table structure to organize the information.</p>
+  <p>To change the price change the <code>h2</code> tag. You can edit the features of each option in the tbody.</p>
+</div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+<xmp class="prettyprint"><div class="wrapper">
+  <h3 class="text-center"><span class="glyphicon glyphicon-leaf"></span>Single Application</h3>
+  <table class="table">
+    <thead>
+      <tr><th><h2><i class="icon-dollar"></i>9</h2></th></tr>
+    </thead>
+    <tbody>
+      <tr><td>One Time Installation</td></tr>
+      <tr><td>No reselling </td></tr>
+      <tr><td>Free Email Support</td></tr>  
+      <tr><td><a class="btn" href="#">PURCHASE NOW</a></td></tr>  
+    </tbody>
+  </table>
+</div></xmp>
+</pre>
+      </div>
+        </div>
+
+<hr />
+<div class="row">
+    <div class="span3">
+  <h3>Clients and Testimonials</h3>
+  <p>This section consists of 2 parts, the logos and the testimonials. When you hover over a logo it switches to the correct testimonial.</p>
+  <p>To change the logos change the <code>img</code> tags within the logo divs.</p>
+  <p>To change the testimonials change the <code>tab-pane</code> divs within tab-content</p>
+</div>
+
+<div class="span9">
+<pre class="prettyprint linenums">
+<xmp class="prettyprint"><div class="row">
+  <div class="logo col-md-3 col-sm-3 col-xs-12"><a class="tab" href="http://webdesigncrowd.com" data-target="#wdc" data-toggle="tab"><img src="img/logo.png"></a></div>
+  <div class="logo col-md-3 col-sm-3 col-xs-12"><a class="tab" href="https://creativemarket.com/webdesigncrowd/" data-target="#creativemarket" data-toggle="tab"><img src="img/CreativeMarket-Logo.png"></a></div>
+</div>
+    
+<div class="row">
+  <div class="empty col-md-1 col-sm-1 col-xs-12"></div>
+  <div class="col-md-10 col-sm-10 col-xs-12">
+    <div class="tab-content">
+      <div class="tab-pane fade" id="wdc">WebDesignCrowd</div>
+      <div class="tab-pane active fade in" id="creativemarket">Creative Market is a platform for handcrafted, mousemade design content from independent creatives around the world. We’re passionate about making beautiful design simple and accessible to everyone.</div>
+    </div>
+  </div>
+  <div class="empty col-md-1 col-sm-1 col-xs-12"></div>
+</div></xmp>
+</pre>
+      </div>
+        </div>
+
+  </section> <!-- Markup -->
+      
+
+<section id="style">
+    <div class="page-header">
+       <h1>Styles <small>Styles customization and highlights</small></h1>
+     </div>
+
+ <div class="alert alert-info"><a class="close" data-dismiss="alert">×</a> <b>Bootstrap Stylesheets:</b> Bootstrap comes with its own css stylesheet that you should never touch or change. It contains all the styles for the bootstrap framework. I have also included that minimized version and the normal version if you want to go through the bootstrap styles.</div>
+
+<div class="row">
+    <div class="span3">
+  <h3>Stylesheets</h3>
+  <p>Here's a list of the stylesheet files I'm using with this template, you can find more information opening each file:</p>
+</div>
+<div class="span9">
+        <table class="table table-bordered table-striped">
+              <thead>
+            <tr>
+                  <th>File Name</th>
+                  <th>Description</th>
+                </tr>
+          </thead>
+              <tbody>
+            <tr>
+                  <td><code>style.css</code></td>
+                  <td>Custom Styles for this template. You can edit this and personalize your theme.</td>
+                </tr>
+            <tr>
+                  <td><code>bootstrap.css</code></td>
+                  <td>Bootstrap stylesheet. It is best not to edit this file at all.</td>
+                </tr>
+          </tbody>
+            </table>
+      </div>
+        </div>
+    <hr />
+    <div class="row">
+        <div class="span3">
+      <h3>How To Edit CSS</h3>
+      <p>Here are some popular things you can edit easily with CSS. Obviously I can't list everything so if there is a specific css question feel free to email me.</p>
+    </div>
+
+    <div class="span9">
+    <pre class="prettyprint linenums">
+    #primaryContent a {
+        color: #someColor;
+        font-size: 40px;
+     	font-family: Arial, Helvetica, sans-serif;
+    }
+    #item {
+        background-color: #someColor;
+    }
+    </pre>
+          </div>
+            </div>
+    <hr />
+    <div class="row">
+	<div class="span3">
+	   <h3>CSS Structure</h3>
+	   <p>The style.css sheet contains all my styles. It's organized so you can easily find what styles correspond to what.</p>
+	</div>
+
+<div class="span9">	
+<pre class="prettyprint linenums">
+/*  NAVBAR
+ *    stylings for fixed navbar
+ */
+
+CSS code
+
+/*  SECTION
+ *    stylings for sections
+ */
+
+CSS code
+
+/*  SERVICES
+ *    stylings for services content
+ *    image background parallax
+ *    Supports grids of multiple sizes (half, thirds, quarters, etc.)
+ */
+
+CSS code
+
+/*  PORTFOLIO
+ *    stylings for portfolio
+ */
+
+CSS code
+
+/*  CLIENTS and TESTIMONIALS
+ *    stylings for testimonials
+ */
+
+CSS code
+
+etc, etc.
+					</pre>
+      </div>
+        </div>
+  </section>
+      <!-- Styles -->
+      
+      <section id="javascript">
+	<div class="page-header">
+	  <h1>JavaScript <small>JavaScript customization and highlights</small></h1>
+	</div>
+	<div class="alert alert-info"><a class="close" data-dismiss="alert">×</a> <b>Bootstrap Javascript:</b> Bootstrap comes with its own javascript file that you should never touch or change. It contains all the scripts for the bootstrap framework. I have also included that minimized version.</div>
+	<div class="row">
+	  <div class="span3">
+	    <h3>JavaScript Files</h3>
+	    <p>Only edit init.js, the rest of the files are plugins or libraries that shouldn't be edited</p>
+	  </div>
+	  <div class="span9">
+	    <table class="table table-bordered table-striped">
+	      <thead>
+	        <tr>
+	          <th>Tag</th>
+	          <th>Description</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr>
+	          <td><code>init.js</code></td>
+	          <td>This is the custom javascript that initializes everything like the carousels, the horizontal scrolling and the cover animations.</td>
+	        </tr>
+	        <tr>
+	          <td><code>jquery-1.9.1.min.js</code></td>
+	          <td>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</td>
+	        </tr>
+	        <tr>
+	          <td><code>bootstrap.js</code></td>
+	          <td>This is the Bootstrap framework javascript that enables all of its functionalities. Do not edit this.</td>
+	        </tr>
+	        <tr>
+	          <td><code>jquery.mixitup.js</code></td>
+	          <td>This is jQuery plugin that enables the portfolio sorting and categorization.</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+	<hr />
+	<div class="row">
+  	<div class="span3">
+  	  <h3>MixItUp Portfolio / Gallery</h3>
+  	  <p>The gallery uses a jQuery plugin called mixitup where you can tag items with certain categories which you can then hide and show depending on specific categories.</p>
+  	  <p>You can assign categories to your gallery items by adding a category name as a class to the <code>li</code> tags with class mix</p>
+  	  <p>For the button filters, you can add data-filters that correspond to classes you assign gallery items.</p>
+  	</div>
+    <div class="span9">
+      <pre class="prettyprint js linenums:103">
+      <xmp class="prettyprint"><div class="controls">	
+  <a class="btn filter" data-filter="all">SHOW ALL</a>
+  <a class="btn filter" data-filter="category_1">CATEGORY 1</a>
+  <a class="btn filter" data-filter="category_2">CATEGORY 2</a>
+  <a class="btn filter" data-filter="category_3">CATEGORY 3</a>
+  <a class="btn filter" data-filter="category_1 category_3">CATEGORY 1 &amp; 3</a>
+</div>
+<div class="gallery" class="row">
+  <li class="col-md-4 col-sm-4 col-xs-12 mix category_1" data-cat="1">
+    <a href="#" data-toggle="modal" data-target="#myModal" class="mix-cover">
+      <img src="img/sintel-bedroom.png">
+      <span class="cover"><h2>Sintel Bedroom</h2></span>
+    </a>
+  </li>
+  <li class="col-md-4 col-sm-4 col-xs-12 mix category_2" data-cat="3">
+    <a href="#" class="mix-cover">
+      <img src="img/ishtar-alley.png">
+      <span class="cover"><h2>Ishtar Alley</h2></span>
+    </a>  
+  </li>
+  <li class="col-md-4 col-sm-4 col-xs-12 mix category_3" data-cat="3">
+    <a href="#" class="mix-cover">
+      <img src="img/sintel-wallpaper-ishtar.jpg">
+      <span class="cover"><h2>Ishtar Wallpaper</h2></span>
+    </a>
+  </li>
+</div></xmp>
+      </pre>
+    </div>
+  </div>
+  
+  <hr />
+	<div class="row">
+	<div class="span3">
+	  <h3>Parallax Backgrounds</h3>
+	  <p>Besides the first background image, you can also set content sections to have custom background images with parallax scrolling.</p>   
+	  <p>To do this, add the class image to the desired section. Then you can edit the css file and add a background image to that sections background class.</p>
+	</div>
+<div class="span9">
+<pre class="prettyprint js linenums:103">
+<xmp class="prettyprint"><div id="services" class="section image">
+  <div class="background parallax"></div>
+</div></xmp>
+
+#services .background {
+  background: url("../img/office.jpg") fixed no-repeat; 
+}
+</pre>
+      </div>
+        </div>
+  </section><!-- JavaScript -->
+      
+      
+
+	<section id="credits">
+	  <div class="page-header">
+	    <h1>Credits Files <small>Some of your credits and sources</small></h1>
+	  </div>
+	  <p>I've used the following images, scripts or other files as listed.</p>
+	  <h3>Framework</h3>
+	  <ol>
+	    <li><a href="http://getbootstrap.com/2.3.2/">Bootstrap</a> <small>&mdash; Version 2.3.2 </small></li>
+	  </ol>
+	  <h3>JavaScript</h3>
+	  <ol>
+	    <li><a href="http://jquery.com/">jQuery</a> <small>&mdash; Popular Javascript library </small></li>
+	    <li><a href="http://mixitup.io/">MixItUp</a> <small>&mdash; A CSS3 and jQuery Filter and Sort Plugin </small></li>
+	  </ol>
+	  <h3>Images</h3>
+	  <ol>
+	    <li><a href="http://sintel.org">Sintel</a> <small>&mdash; Gallery Images from Open Blender Movie, Sintel</small></li>
+	    <li><a href="http://freerangestock.com">Portrait Images</a> <small>&mdash; Images from FreeRangeStock</small></li>
+	    <li><a href="http://www.sxc.hu/">Background Images</a> <small>&mdash; Modified Blurred Background Images from StockExchange</small></li>
+	  </ol>
+	</section><!-- Credits -->
+      
+
+
+      <hr />
+
+<div class="goodbye">
+    <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. Email me at <a href="mailto:webdesigncrowd@gmail.com" >Webdesigncrowd@gmail.com</a> Or message me on <a href="https://creativemarket.com/webdesigncrowd/">Creative Market</a></p>
+  </div>
+
+      <hr />
+
+<footer>
+    <p>&copy; Made by <a href="http://webdesigncrowd.com">WebDesignCrowd</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-transition.js"></script> 
+<script src="assets/js/bootstrap-alert.js"></script> 
+<script src="assets/js/bootstrap-modal.js"></script> 
+<script src="assets/js/bootstrap-dropdown.js"></script> 
+<script src="assets/js/bootstrap-scrollspy.js"></script> 
+<script src="assets/js/bootstrap-tab.js"></script> 
+<script src="assets/js/bootstrap-tooltip.js"></script> 
+<script src="assets/js/bootstrap-popover.js"></script> 
+<script src="assets/js/bootstrap-button.js"></script> 
+<script src="assets/js/bootstrap-collapse.js"></script>
+</body>
+</html>
