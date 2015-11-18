@@ -311,7 +311,7 @@ label {
   min-height: 100%;
   z-index: 1;
   padding-top: 105px;
-  background-color: #33dd33;
+  background-color: #11ccaa;
   transition: background-color 1s;
   -webkit-transition: background-color 1s; 
 }
@@ -380,7 +380,7 @@ label {
     margin-top: 20px;
     color: rgba(255,255,255,.9);
   }
-  .welcome span.glyphicon {
+  .welcome span.glyphicon, .welcome div.profile {
     margin-top: 70px;
     color: rgba(255,255,255,.9);    
     font-size: 40px;
