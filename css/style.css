@@ -311,7 +311,7 @@ label {
   min-height: 100%;
   z-index: 1;
   padding-top: 105px;
-  background-color: #ffd03c;
+  background-color: #33dd33;
   transition: background-color 1s;
   -webkit-transition: background-color 1s; 
 }
@@ -322,7 +322,7 @@ label {
     background-color: #eee;
   }
     .section.white h1 {
-      color: #f4c532; 
+      color: #f4c532;
     }    
     .section.white a.btn {
       color: #777;
@@ -366,6 +366,12 @@ label {
     text-align: center;
     font-size: 50px;
     color: #fff;
+    margin-bottom: 0;
+  }
+  .section h2 {
+    color: #fff;
+    margin: 2px 0 32px 0;
+    padding-top: 0;
   }
   .welcome .scroll-down i {
     display: block;
