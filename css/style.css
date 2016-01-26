@@ -219,13 +219,13 @@ label {
     font-size: 30px;
     line-height: 70px;
     font-weight: normal;
-    color: #ffde36;
+    color: #11ccaa;
     padding: 0 30px 0 0;
     -webkit-transition: .4s;
     transition: .4s;
   }
     .navbar a.navbar-brand span.glyphicon { top: 4px; font-size: 28px; }
-    .navbar a.navbar-brand:hover, .navbar a.navbar-brand:focus  { color: #edc80e; } 
+    .navbar a.navbar-brand:hover, .navbar a.navbar-brand:focus  { color: #11ccaa; }
 
   /* Smaller device menu styles */
   .navbar .navbar-toggle {
