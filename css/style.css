@@ -4,6 +4,21 @@
  *
  */
 
+.uc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #11ccaa;
+}
+
+.uc-message {
+  margin-top: 20%;
+  border: 8px solid #ffffff;
+  padding: 40px;
+  border-radius: 26px;
+  color: #ffffff;
+}
+
 html, body {
   font-family: 'Raleway', Arial, Helvetica, sans-serif;
   height: 100%;
