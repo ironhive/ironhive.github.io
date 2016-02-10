@@ -31,6 +31,8 @@
     // Tooltip init
     $(".service-icon i").tooltip();
     $(".social-media a").tooltip();
+
+        $('[data-toggle="tooltip"]').tooltip();
       
     // custom parallax 
     $(window).scroll(function() {
