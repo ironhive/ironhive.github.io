@@ -34,7 +34,7 @@
   list-style: none;
 }
 
-.uc-links li {
+.uc-links li a {
   display: block;
   margin: 8px 0;
   padding: 12px;
