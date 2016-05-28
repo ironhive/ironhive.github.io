@@ -23,6 +23,13 @@ $(document).ready(function(){
         ["Flying Tiger Comes Out of the Cave", "Fei Hu Ch\'u Tong"],
     ];
 
+    var weaponForms = [
+        ["First Level Staff", "Chu Chi Kuan Su"],
+        ["Northern Beggar\'s Stick", "Bei Huang Ch\'k Kai Pang"],
+        ["Night Battle 8 Way Broadsword", "Ye Chan Pa Huang Tao"],
+        ["Sai", "Tie Cha Chuan"]
+    ];
+
     var init = function() {
 
         // Hide activity
@@ -35,7 +42,7 @@ $(document).ready(function(){
         setInterval(
             function(){
                 // Select activity
-                var activity = Math.floor(Math.random()*3);
+                var activity = Math.floor(Math.random()*4);
                 var name = "";
                 var count = "";
                 var description = "";
@@ -52,6 +59,11 @@ $(document).ready(function(){
                         var entry = [Math.floor(Math.random()*2)];
                         name = longForms[entry][0];
                         description = longForms[entry][1];
+                        break;
+                    case 3:
+                        var entry = [Math.floor(Math.random()*2)];
+                        name = weaponForms[entry][0];
+                        description = weaponForms[entry][1];
                         break;
                 }
                 $('.activity-type-title').text(name);
