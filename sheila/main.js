@@ -26,14 +26,42 @@ $(document).ready(function(){
     var init = function() {
 
         // Hide activity
-        $('.activity-type').hide();
+        $('.activity-duration').hide();
+        $('.activity-selection').hide();
 
         // Get practice options
         selectOptions();
 
-        //$('.activity-type-title').text(longForms[0][0]);
-        //$('.activity-type-number').text(shortKatas[0]);
-        //$('.activity-type-description').text(longForms[0][1]);
+        setInterval(
+            function(){
+                // Select activity
+                var activity = Math.floor(Math.random()*3);
+                var name = "";
+                var count = "";
+                var description = "";
+                switch (activity) {
+                    case 0:
+                        name = activityTypes[activity];
+                        description = shortKatas[Math.floor(Math.random()*30)];
+                        break;
+                    case 1:
+                        name = activityTypes[activity];
+                        description = sparringTechniques[Math.floor(Math.random()*20)];
+                        break;
+                    case 2:
+                        var entry = [Math.floor(Math.random()*2)];
+                        name = longForms[entry][0];
+                        description = longForms[entry][1];
+                        break;
+                }
+                $('.activity-type-title').text(name);
+                $('.activity-type-number').text(count);
+                $('.activity-type-description').text(description);
+            },
+            4000  /* 10000 ms = 10 sec */
+        );
+
+
     };
 
     var selectOptions = function() {
