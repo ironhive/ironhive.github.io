@@ -1,0 +1,86 @@
+html, body, * {
+    font-family: 'Raleway';
+    color: #f2f2f2;
+}
+
+.layout-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    background-color: #222222;
+    -webkit-box-pack: middle;
+    -webkit-justify-content: middle;
+    -ms-flex-pack: middle;
+    justify-content: middle;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.activity-type {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+}
+.activity-type .activity-type-title {
+    font-size: 6rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.activity-type .activity-type-description, .activity-type .activity-type-number {
+    font-family: 'Oswald';
+    font-size: 12rem;
+    font-weight: 400;
+}
+.activity-type .activity-type-number {
+    display: inline-block;
+}
+
+.activity-duration {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+}
+.activity-duration button.btn {
+    background: transparent;
+    color: #f2f2f2;
+    font-size: 3rem;
+    font-weight: 100;
+    padding: 18px;
+    outline: none;
+}
+.activity-duration button.btn:focus, .activity-duration button.btn.active {
+    background: #f2f2f2;
+    color: black;
+    font-weight: 400;
+}
+
+.activity-selection {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+}
+.activity-selection label.btn {
+    background: transparent;
+    color: #f2f2f2;
+    font-size: 3rem;
+    font-weight: 100;
+    padding: 18px;
+    outline: none;
+}
+.activity-selection label.btn.active {
+    background: #f2f2f2;
+    color: black;
+    font-weight: 400;
+}

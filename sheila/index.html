@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shaolin Do Practice Timer</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,900,100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="layout-container">
+
+    <!-- Activity Selection -->
+    <div class="activity-duration">
+        <h2>How long do you want to practice?</h2>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">10 Minutes</button>
+            <button type="button" class="btn btn-default">15 Minutes</button>
+            <button type="button" class="btn btn-default">20 Minutes</button>
+        </div>
+    </div>
+
+    <div class="activity-selection">
+        <h2>Which activities to you want to include?</h2>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off">Sparring Techniques
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off">Short Katas
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off">Long Forms
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off">Weapon Forms
+            </label>
+        </div>
+    </div>
+
+    <!-- Activity In-Progress -->
+    <div class="activity-type">
+        <div class="activity-type-title">
+            <span class="activity-type-number"></span>
+        </div>
+        <div class="activity-type-description"></div>
+        <div class="activity-timer-counter"></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
