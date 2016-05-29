@@ -29,7 +29,18 @@ html, body, * {
     align-self: center;
     margin: auto;
     text-align: center;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
 }
+
+.activity-type.change {
+    padding-bottom: 40px;
+    opacity: 0;
+}
+
 .activity-type .activity-type-title {
     font-size: 6rem;
     font-weight: 100;
