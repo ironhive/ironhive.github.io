@@ -32,14 +32,15 @@ $(document).ready(function(){
 
     var activityLength = 5000;
 
+    // Flags
+    var includeWeapons = true;
+    var includeCombos = true;
+
     var init = function() {
 
         // Hide activity setup
         $('.activity-duration').hide();
         $('.activity-selection').hide();
-
-        // Hide activity
-        //$('.activity-type').hide();
 
         // Get practice options
         selectOptions();
@@ -58,18 +59,38 @@ $(document).ready(function(){
     var getActivity = function(){
 
         // Select activity
-        var activity = Math.floor(Math.random()*4);
+        if (includeWeapons) {
+            var activity = Math.floor(Math.random() * 4);
+        } else {
+            var activity = Math.floor(Math.random() * 3);
+        }
         var name = "";
         var count = "";
         var description = "";
         switch (activity) {
             case 0:
                 name = activityTypes[activity];
-                description = shortKatas[Math.floor(Math.random()*30)];
+                if(includeCombos) {
+                    for (var i = 0; i < 3; i++) {
+                        description += shortKatas[Math.floor(Math.random()*30)];
+                        description += "   ";
+                    }
+                    description = description.trim();
+                } else {
+                    description += shortKatas[Math.floor(Math.random()*30)];
+                }
                 break;
             case 1:
                 name = activityTypes[activity];
-                description = sparringTechniques[Math.floor(Math.random()*20)];
+                if(includeCombos) {
+                    for (var i = 0; i < 3; i++) {
+                        description += sparringTechniques[Math.floor(Math.random()*20)];
+                        description += "   ";
+                    }
+                    description = description.trim();
+                } else {
+                    description += sparringTechniques[Math.floor(Math.random()*20)];
+                }
                 break;
             case 2:
                 var entry = [Math.floor(Math.random()*2)];

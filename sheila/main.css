@@ -72,7 +72,7 @@ html, body, * {
 }
 .activity-duration button.btn:focus, .activity-duration button.btn.active {
     background: #f2f2f2;
-    color: black;
+    color: #000000;
     font-weight: 400;
 }
 
@@ -93,6 +93,6 @@ html, body, * {
 }
 .activity-selection label.btn.active {
     background: #f2f2f2;
-    color: black;
+    color: #000000;
     font-weight: 400;
 }
