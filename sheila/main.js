@@ -164,9 +164,9 @@ $(document).ready(function(){
                     var comboLength = Math.floor(Math.random()*4);
                     for (var i = 0; i < comboLength; i++) {
                         description += shortKatas[Math.floor(Math.random()*30)];
-                        description += "   ";
+                        description += ", ";
                     }
-                    description = description.trim();
+                    description = description.substring(0, description.length-2);
                     activityLength = (5000 * comboLength) * speedModifier;
                 } else {
                     description += shortKatas[Math.floor(Math.random()*30)];
@@ -179,9 +179,9 @@ $(document).ready(function(){
                     var comboLength = Math.floor(Math.random()*4);
                     for (var i = 0; i < comboLength; i++) {
                         description += sparringTechniques[Math.floor(Math.random()*20)];
-                        description += "   ";
+                        description += ", ";
                     }
-                    description = description.trim();
+                    description = description.substring(0, description.length-2);
                     activityLength = (5000 * comboLength) * speedModifier;
                 } else {
                     description += sparringTechniques[Math.floor(Math.random()*20)];
