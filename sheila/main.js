@@ -8,35 +8,6 @@ function Timer(duration, element) {
         ticker: document.getElementById('ticker'),
         seconds: document.getElementById('seconds'),
     };
-
-    /*document.getElementById('toggle').addEventListener('click', function() {
-        var cl = 'countdown--wide';
-        if (self.element.classList.contains(cl)) {
-            self.element.classList.remove(cl);
-        } else {
-            self.element.classList.add(cl);
-        }
-    });*/
-
-    var hammerHandler = new Hammer(this.element);
-    hammerHandler.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
-    hammerHandler.on('panup pandown', function(ev) {
-        if (!self.running) {
-            if (ev.direction === Hammer.DIRECTION_UP && self.duration < 999000) {
-                self.setDuration(self.duration + 1000);
-            } else if (ev.direction === Hammer.DIRECTION_DOWN && self.duration > 0) {
-                self.setDuration(self.duration - 1000);
-            }
-        }
-    });
-
-    /*hammerHandler.on('tap', function() {
-        if (self.running) {
-            self.reset();
-        } else {
-            self.start();
-        }
-    })*/
 }
 
 Timer.prototype.start = function() {
@@ -62,9 +33,9 @@ Timer.prototype.start = function() {
             self.frameReq = window.requestAnimationFrame(draw);
         } else {
             //self.running = false;
-            self.els.seconds.textContent = 0;
-            self.els.ticker.style.width = '0%';
-            self.element.classList.add('countdown--ended');
+            //self.els.seconds.textContent = 0;
+            //self.els.ticker.style.width = '0%';
+            //self.element.classList.add('countdown--ended');
         }
     };
 
@@ -109,6 +80,15 @@ $(document).ready(function(){
     var longForms = [
         ["Four Doorways", "Se Men Dao Lian"],
         ["Flying Tiger Comes Out of the Cave", "Fei Hu Ch\'u Tong"],
+        ["Giant Bird Spreads Its Wings", "Tai Peng Sin Kun"],
+        ["Fist of Luo Han", "Luo Han Ch\'uan"],
+        ["White Crane Circles Its Wings (1)", "Bai He Chuan Tsu"],
+        ["White Crane Jabs Its Wings (2)", "Bai He Chan Tsu"],
+        ["White Crane Circles Its Legs (3)", "Bai He Chuan Chiao"],
+        ["Three Method Fist", "San Ye Chuan"],
+        ["Giant Bird Descends from Heaven (1)", "Luo Tien"],
+        ["Giant Bird Spreads the Feathers (2)", "Chan Ie"],
+        ["Performing Dove (3)", "Yin He"],
     ];
 
     var weaponForms = [
@@ -122,21 +102,46 @@ $(document).ready(function(){
     var availableActivities = [];
 
     var activityLength = 400;
+    var speedModifier = 1;
 
     // Flags
-    var includeCombos = true;
+    var includeCombos = false;
 
     var init = function() {
 
-        // Start showing activities
-        //activityFlow();
+        $('#ticker').hide();
+        $('.activity-type').hide();
+
+        // Event handlers
+        $('.activity-combos').click(function(){
+            includeCombos = !includeCombos;
+        });
+        $('.speed > button.btn').click(setSpeed);
         $('.activity').click(toggleActivity);
         $('#go').click(setOptions);
     };
 
+    var setSpeed = function (){
+        $('.speed > button.btn').removeClass('active');
+        $(this).addClass('active');
+
+        var selectedSpeed = $(this).data('speed');
+        switch (selectedSpeed) {
+            case "slow":
+                speedModifier = 2;
+                break;
+            case "med":
+                speedModifier = 1;
+                break;
+            case "fast":
+                speedModifier = 0.5;
+                break;
+        }
+    };
+
     var activityFlow = function(){
         $('.activity-type').addClass('change');
-       window.setTimeout(function(){
+        window.setTimeout(function(){
             getActivity();
             var timer = new Timer(activityLength-400, document.getElementById('countdown'));
             timer.start();
@@ -156,40 +161,44 @@ $(document).ready(function(){
             case 0:
                 name = activityTypes[availableActivities[activity]];
                 if(includeCombos) {
-                    for (var i = 0; i < 3; i++) {
+                    var comboLength = Math.floor(Math.random()*4);
+                    for (var i = 0; i < comboLength; i++) {
                         description += shortKatas[Math.floor(Math.random()*30)];
                         description += "   ";
                     }
                     description = description.trim();
-                    activityLength = 3000;
+                    activityLength = (5000 * comboLength) * speedModifier;
                 } else {
                     description += shortKatas[Math.floor(Math.random()*30)];
+                    activityLength = 5000 * speedModifier;
                 }
                 break;
             case 1:
                 name = activityTypes[availableActivities[activity]];
                 if(includeCombos) {
-                    for (var i = 0; i < 3; i++) {
+                    var comboLength = Math.floor(Math.random()*4);
+                    for (var i = 0; i < comboLength; i++) {
                         description += sparringTechniques[Math.floor(Math.random()*20)];
                         description += "   ";
                     }
                     description = description.trim();
-                    activityLength = 5000;
+                    activityLength = (5000 * comboLength) * speedModifier;
                 } else {
                     description += sparringTechniques[Math.floor(Math.random()*20)];
+                    activityLength = 3000 * speedModifier;
                 }
                 break;
             case 2:
-                var entry = [Math.floor(Math.random()*2)];
+                var entry = [Math.floor(Math.random()*longForms.length)];
                 name = longForms[entry][0];
                 description = longForms[entry][1];
-                activityLength = 10000;
+                activityLength = 60000 * speedModifier;
                 break;
             case 3:
-                var entry = [Math.floor(Math.random()*2)];
+                var entry = [Math.floor(Math.random()*weaponForms.length)];
                 name = weaponForms[entry][0];
                 description = weaponForms[entry][1];
-                activityLength = 10000;
+                activityLength = 120000 * speedModifier;
                 break;
         }
         $('.activity-type-title').text(name);
@@ -204,7 +213,6 @@ $(document).ready(function(){
         var activityNumber = $(this).data('activity');
 
         selectionsArray[activityNumber] = !selectionsArray[activityNumber];
-        console.log(selectionsArray);
     };
 
     var setOptions = function() {
@@ -219,7 +227,10 @@ $(document).ready(function(){
         if (availableActivities.length == 0) {
             return;
         } else {
-            $('.activity-selection').fadeOut();
+            $('.activity-selection').fadeOut(function(){
+                $('#ticker').show();
+                $('.activity-type').show();
+            });
             window.setTimeout(activityFlow, 1000);
         }
     };

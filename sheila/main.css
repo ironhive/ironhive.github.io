@@ -8,6 +8,10 @@ html, body {
     touch-action: none;
 }
 
+h2 {
+    margin-top: 4rem;
+}
+
 .layout-container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -15,10 +19,10 @@ html, body {
     display: flex;
     height: 100vh;
     background-color: transparent;
-    -webkit-box-pack: middle;
-    -webkit-justify-content: middle;
-    -ms-flex-pack: middle;
-    justify-content: middle;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     align-items: center;
     width: 100%;
     -webkit-box-orient: vertical;
@@ -68,14 +72,27 @@ html, body {
     margin: 0 auto;
     text-align: center;
 }
-.activity-duration button.btn {
+button.btn, button#go {
     background: transparent;
     color: #f2f2f2;
     font-size: 3rem;
     font-weight: 100;
     padding: 18px;
     outline: none;
+    min-width: 14rem;
+    outline: none;
 }
+
+button#go {
+    margin-top: 4rem;
+    background-color: #4fd600;
+}
+
+label.activity-combos {
+    margin-right: 20px;
+    outline: none;
+}
+
 .activity-duration button.btn:focus, .activity-duration button.btn.active {
     background: #f2f2f2;
     color: #000000;
@@ -87,6 +104,9 @@ html, body {
     align-self: center;
     margin: 0 auto;
     text-align: center;
+    flex-direction: row;
+    align-content: center;
+    -webkit-align-content: center;
 }
 .activity-selection label.btn {
     background: transparent;
@@ -143,7 +163,7 @@ html, body {
     align-items: center;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
-    font-size: 25vmin;
+    /*font-size: 25vmin;*/
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
@@ -195,7 +215,6 @@ html, body {
 .countdown--wide {
     width: 100%;
     height: 100%;
-    font-size: 50vmin;
     border-radius: 0;
 }
 .countdown__fill {
