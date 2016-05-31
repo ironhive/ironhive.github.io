@@ -118,67 +118,63 @@ $(document).ready(function(){
         ["Sai", "Tie Cha Chuan"]
     ];
 
-    var activityLength = 5000;
+    var selectionsArray = [false, false, false, false];
+    var availableActivities = [];
+
+    var activityLength = 400;
 
     // Flags
-    var includeWeapons = true;
     var includeCombos = true;
 
     var init = function() {
 
-        // Hide activity setup
-        //$('.activity-duration').hide();
-        //$('.activity-selection').hide();
-
-        // Get practice options
-        selectOptions();
-
         // Start showing activities
-        activityFlow();
-        setInterval(activityFlow, 10000);
-
+        //activityFlow();
+        $('.activity').click(toggleActivity);
+        $('#go').click(setOptions);
     };
 
     var activityFlow = function(){
         $('.activity-type').addClass('change');
-        var timeout = setTimeout(getActivity, 400);
+       window.setTimeout(function(){
+            getActivity();
+            var timer = new Timer(activityLength-400, document.getElementById('countdown'));
+            timer.start();
+            window.setTimeout(activityFlow, activityLength);
+        }, 400);
     };
 
     var getActivity = function(){
 
-        var timer = new Timer(10000, document.getElementById('countdown'));
-        timer.start();
-
         // Select activity
-        if (includeWeapons) {
-            var activity = Math.floor(Math.random() * 4);
-        } else {
-            var activity = Math.floor(Math.random() * 3);
-        }
+        var activity = Math.floor(Math.random() * availableActivities.length);
+
         var name = "";
         var count = "";
         var description = "";
-        switch (activity) {
+        switch (availableActivities[activity]) {
             case 0:
-                name = activityTypes[activity];
+                name = activityTypes[availableActivities[activity]];
                 if(includeCombos) {
                     for (var i = 0; i < 3; i++) {
                         description += shortKatas[Math.floor(Math.random()*30)];
                         description += "   ";
                     }
                     description = description.trim();
+                    activityLength = 3000;
                 } else {
                     description += shortKatas[Math.floor(Math.random()*30)];
                 }
                 break;
             case 1:
-                name = activityTypes[activity];
+                name = activityTypes[availableActivities[activity]];
                 if(includeCombos) {
                     for (var i = 0; i < 3; i++) {
                         description += sparringTechniques[Math.floor(Math.random()*20)];
                         description += "   ";
                     }
                     description = description.trim();
+                    activityLength = 5000;
                 } else {
                     description += sparringTechniques[Math.floor(Math.random()*20)];
                 }
@@ -187,11 +183,13 @@ $(document).ready(function(){
                 var entry = [Math.floor(Math.random()*2)];
                 name = longForms[entry][0];
                 description = longForms[entry][1];
+                activityLength = 10000;
                 break;
             case 3:
                 var entry = [Math.floor(Math.random()*2)];
                 name = weaponForms[entry][0];
                 description = weaponForms[entry][1];
+                activityLength = 10000;
                 break;
         }
         $('.activity-type-title').text(name);
@@ -202,8 +200,28 @@ $(document).ready(function(){
         $('.activity-type').removeClass('change');
     };
 
-    var selectOptions = function() {
+    var toggleActivity = function() {
+        var activityNumber = $(this).data('activity');
 
+        selectionsArray[activityNumber] = !selectionsArray[activityNumber];
+        console.log(selectionsArray);
+    };
+
+    var setOptions = function() {
+
+        for(var i = 0; i < selectionsArray.length; i++) {
+            if (selectionsArray[i] == true) {
+                availableActivities.push(i);
+            }
+        }
+
+        // No activities were selected, don't proceed
+        if (availableActivities.length == 0) {
+            return;
+        } else {
+            $('.activity-selection').fadeOut();
+            window.setTimeout(activityFlow, 1000);
+        }
     };
 
     init();

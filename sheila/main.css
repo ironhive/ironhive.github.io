@@ -96,9 +96,12 @@ html, body {
     padding: 18px;
     outline: none;
 }
-.activity-selection label.btn.active {
+.activity-selection label.btn.active, .activity-selection label.btn:active {
     background: #f2f2f2;
     color: #000000;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 
