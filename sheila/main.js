@@ -30,13 +30,13 @@ function Timer(duration, element) {
         }
     });
 
-    hammerHandler.on('tap', function() {
+    /*hammerHandler.on('tap', function() {
         if (self.running) {
             self.reset();
         } else {
             self.start();
         }
-    })
+    })*/
 }
 
 Timer.prototype.start = function() {
@@ -52,7 +52,7 @@ Timer.prototype.start = function() {
         var newSeconds = Math.ceil((self.duration - diff)/1000);
 
         if (diff <= self.duration) {
-            self.els.ticker.style.height = 100 - (diff/self.duration*100) + '%';
+            self.els.ticker.style.width = 100 - (diff/self.duration*100) + '%';
 
             if (newSeconds != remainingSeconds) {
                 //self.els.seconds.textContent = newSeconds;
@@ -63,7 +63,7 @@ Timer.prototype.start = function() {
         } else {
             //self.running = false;
             self.els.seconds.textContent = 0;
-            self.els.ticker.style.height = '0%';
+            self.els.ticker.style.width = '0%';
             self.element.classList.add('countdown--ended');
         }
     };
@@ -127,15 +127,15 @@ $(document).ready(function(){
     var init = function() {
 
         // Hide activity setup
-        $('.activity-duration').hide();
-        $('.activity-selection').hide();
+        //$('.activity-duration').hide();
+        //$('.activity-selection').hide();
 
         // Get practice options
         selectOptions();
 
         // Start showing activities
         activityFlow();
-        setInterval(activityFlow, 5000);
+        setInterval(activityFlow, 10000);
 
     };
 
@@ -146,9 +146,9 @@ $(document).ready(function(){
 
     var getActivity = function(){
 
-        var timer = new Timer(5000, document.getElementById('countdown'));
+        var timer = new Timer(10000, document.getElementById('countdown'));
         timer.start();
-        
+
         // Select activity
         if (includeWeapons) {
             var activity = Math.floor(Math.random() * 4);

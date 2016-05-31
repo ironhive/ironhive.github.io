@@ -79,7 +79,6 @@ html, body {
 .activity-duration button.btn:focus, .activity-duration button.btn.active {
     background: #f2f2f2;
     color: #000000;
-    font-weight: 400;
 }
 
 .activity-selection {
@@ -100,7 +99,6 @@ html, body {
 .activity-selection label.btn.active {
     background: #f2f2f2;
     color: #000000;
-    font-weight: 400;
 }
 
 
@@ -155,10 +153,6 @@ html, body {
     -webkit-animation: buzz 0.5s;
     animation: buzz 0.5s;
 }
-.countdown:active {
-    -webkit-transform: scale(1.02);
-    transform: scale(1.02);
-}
 @-webkit-keyframes buzz {
     0% {
         -webkit-transform: rotate(0);
@@ -204,7 +198,7 @@ html, body {
 .countdown__fill {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 4%;
     position: absolute;
     left: 0;
     bottom: 0;
