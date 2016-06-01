@@ -172,6 +172,7 @@ $(document).ready(function(){
                     description += shortKatas[Math.floor(Math.random()*30)];
                     activityLength = 5000 * speedModifier;
                 }
+                responsiveVoice.speak("short katta " + description);
                 break;
             case 1:
                 name = activityTypes[availableActivities[activity]];
@@ -187,6 +188,7 @@ $(document).ready(function(){
                     description += sparringTechniques[Math.floor(Math.random()*20)];
                     activityLength = 3000 * speedModifier;
                 }
+                responsiveVoice.speak("sparring technique " + description);
                 break;
             case 2:
                 var entry = [Math.floor(Math.random()*longForms.length)];
