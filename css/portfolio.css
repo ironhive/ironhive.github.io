@@ -126,18 +126,25 @@ a, a:hover, a:visited {
     margin-top: 0;
 }
 
+.blurbs {
+    margin-bottom: 0;
+}
+
 .sub-proj-row {
     margin: 20px 0;
 }
 
 .sub-proj {
-    width: 30%;
-    padding-right: 3%;
+    width: 31%;
 }
 
 .sub-proj img {
     width: 100%;
     height: auto;
+}
+
+.sub-proj.middle {
+    margin: 0 3%;
 }
 
 .footer {
